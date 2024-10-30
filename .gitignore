@@ -56,8 +56,8 @@ replay_pid*
 /frontend/miruyume_react/nginx.conf
 
 # Ignore lock files
-/frontend/miruyume_react/package-lock.json
-/frontend/miruyume_react/yarn.lock
+# /frontend/miruyume_react/package-lock.json
+# /frontend/miruyume_react/yarn.lock
 
 # Ignore IDE/editor specific files
 .vscode/
