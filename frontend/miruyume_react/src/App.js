@@ -4,6 +4,7 @@ import MenuBar from './components/MenuBar';
 import ContentWindow from './components/ContentWindow';
 import MessageBar from './components/MessageBar';
 import './App.css';
+import config from './components/config';
 
 function App() {
   const [isMenuOpen, setMenuOpen] = useState(false);

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './MessageBar.css';
+import config from './config';
 
 function MessageBar() {
     const [message, setMessage] = useState('');
 
     const logMessageToServer = async (message) => {
         try {
-            const response = await fetch('http://localhost:5000/api/frontend_log', {
+            const response = await fetch('${config.backendUrl}/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ContentWindow.css';
 import AiTile from './AiTile';
+import config from './config';
 
 // Component for handling project tiles
 function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
@@ -8,7 +9,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
 
     const logEventToServer = async (eventType, data) => {
         try {
-            const response = await fetch('http://localhost:5000/api/frontend_log', {
+            const response = await fetch('${config.backendUrl}/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -111,7 +112,7 @@ function ContentWindow() {
 
     const logEventToServer = async (eventType, data) => {
         try {
-            const response = await fetch('http://localhost:5000/api/frontend_log', {
+            const response = await fetch('${config.backendUrl}/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -128,7 +129,7 @@ function ContentWindow() {
 
     useEffect(() => {
         // Fetch presentation data from the Flask backend
-        fetch('http://localhost:5000/api/presentations')
+        fetch('${config.backendUrl}/api/presentations')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);

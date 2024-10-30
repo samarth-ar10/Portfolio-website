@@ -2,6 +2,7 @@
 
 import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import './MenuBar.css';
+import config from './config';
 
 const MenuBar = forwardRef(({ isOpen, toggleMenu }, ref) => {
     const [menuItems, setMenuItems] = useState([]);

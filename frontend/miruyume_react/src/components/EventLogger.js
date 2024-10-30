@@ -1,4 +1,5 @@
 // EventLogger.js - Dynamic Event Logging System
+import config from './config';
 
 class EventLogger {
     constructor() {
@@ -54,7 +55,7 @@ class EventLogger {
     // Method to send event to server for logging in a database
     async sendEventToServer(event) {
       try {
-        const response = await fetch('http://localhost:5000/api/logEvent', {
+        const response = await fetch('${config.backendUrl}/api/logEvent', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

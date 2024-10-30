@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import './StatusBar.css';
+import config from './config';
 
 function StatusBar({ isMenuOpen, handleMenuToggle }) {
 
