@@ -1,0 +1,39 @@
+/* MenuBar.css */
+
+.menu-bar {
+    max-height: calc(100vh - 140px);
+    /* Prevents the menu from expanding beyond a certain point */
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateX(-100%) translateY(-50%);
+    height: auto;
+    width: 250px;
+    background-color: #444;
+    color: #fff;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 100;
+}
+
+.menu-bar.open {
+    transform: translateX(0) translateY(-50%);
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    color: #ddd;
+}

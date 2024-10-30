@@ -1,0 +1,55 @@
+/* MessageBar.css */
+
+.message-bar {
+    /* MessageBar.css */
+    z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    background-color: #333;
+    padding: 10px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.message-bar textarea {
+    resize: vertical;
+    overflow: auto;
+    flex: 1;
+    padding: 0px;
+    padding-inline: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: inherit;
+    min-height: 40px;
+    max-height: 120px;
+}
+
+.message-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+#send-button {
+    z-index: 1001;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#send-button:hover {
+    background-color: #005bb5;
+}
