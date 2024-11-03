@@ -81,3 +81,5 @@ replay_pid*
 *.crt
 *.env
 
+frontend/miruyume_react/node_modules/.cache/babel-loader/*.json
+frontend/miruyume_react/node_modules/.cache/.eslintcache
