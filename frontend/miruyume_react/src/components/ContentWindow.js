@@ -9,7 +9,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
 
     const logEventToServer = async (eventType, data) => {
         try {
-            const response = await fetch('${config.backendUrl}/api/frontend_log', {
+            const response = await fetch('http://51.24.2.92:8000/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ function ContentWindow() {
 
     const logEventToServer = async (eventType, data) => {
         try {
-            const response = await fetch('${config.backendUrl}/api/frontend_log', {
+            const response = await fetch('http://51.24.2.92:8000/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ function ContentWindow() {
 
     useEffect(() => {
         // Fetch presentation data from the Flask backend
-        fetch('${config.backendUrl}/api/presentations')
+        fetch('http://51.24.2.92:8000/api/presentations')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);

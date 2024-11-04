@@ -9,7 +9,7 @@ function AiTile() {
         // Fetch AI response from the server on component mount
         const fetchAiResponse = async () => {
             try {
-                const response = await fetch('${config.backendUrl}/api/ai_response');
+                const response = await fetch('http://51.24.2.92:8000/api/ai_response');
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }

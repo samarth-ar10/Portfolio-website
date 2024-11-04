@@ -7,7 +7,7 @@ function MessageBar() {
 
     const logMessageToServer = async (message) => {
         try {
-            const response = await fetch('${config.backendUrl}/api/frontend_log', {
+            const response = await fetch('http://51.24.2.92:8000/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
