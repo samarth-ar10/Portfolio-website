@@ -71,14 +71,16 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
 
     const renderSlideContent = () => {
         const slide = project.slides[currentSlideIndex];
+        console.log('Slide:', slide);
+        console.log('Slide Type:', slide.slideType);
         switch (slide.slideType) {
-            case 'Text':
+            case 'text':
                 return <p>{slide.slideInformation}</p>;
-            case 'Image':
+            case 'images':
                 return <img src={slide.slideInformation} alt={slide.slideDescription} className="slide-image" />;
-            case 'Video':
+            case 'video':
                 return <video controls src={slide.slideInformation} className="slide-video">Your browser does not support the video tag.</video>;
-            case 'EmbeddedLink':
+            case 'embeddedLink':
                 return <iframe src={slide.slideInformation} title={slide.slideName} className="slide-embedded-link"></iframe>;
             default:
                 return <p>Unsupported slide type</p>;
