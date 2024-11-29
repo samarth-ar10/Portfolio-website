@@ -3,13 +3,15 @@ import './ContentWindow.css';
 import AiTile from './AiTile';
 import config from './config';
 
+URL = 'http://127.0.0.1:8000';
+
 // Component for handling project tiles
 function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
     const tileRef = useRef();
 
     const logEventToServer = async (eventType, data) => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/frontend_log', {
+            const response = await fetch(URL + '/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -73,15 +75,23 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
         const slide = project.slides[currentSlideIndex];
         console.log('Slide:', slide);
         console.log('Slide Type:', slide.slideType);
+        let temp_url = slide.slideInformation;
         switch (slide.slideType) {
             case 'text':
                 return <p>{slide.slideInformation}</p>;
             case 'images':
-                return <img src={slide.slideInformation} alt={slide.slideDescription} className="slide-image" />;
+                temp_url = URL + slide.slideInformation;
+                return <img src={temp_url} alt={slide.slideDescription} className="slide-image" />;
             case 'video':
-                return <video controls src={slide.slideInformation} className="slide-video">Your browser does not support the video tag.</video>;
+                temp_url = URL + temp_url;
+                return <video controls src={temp_url} className="slide-video">Your browser does not support the video tag.</video>;
+            case 'pdfs':
+                temp_url = URL + temp_url;
+                return <object data={temp_url} type="application/pdf" className="slide-pdf">
+                    <p>PDF cannot be displayed. You can download it <a href={temp_url}>here</a>.</p>
+                </object>;
             case 'embeddedLink':
-                return <iframe src={slide.slideInformation} title={slide.slideName} className="slide-embedded-link"></iframe>;
+                return <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link"></iframe>;
             default:
                 return <p>Unsupported slide type</p>;
         }
