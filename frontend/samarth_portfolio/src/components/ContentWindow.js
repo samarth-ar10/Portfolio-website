@@ -3,7 +3,7 @@ import './ContentWindow.css';
 import AiTile from './AiTile';
 import config from './config';
 
-URL = 'http://127.0.0.1:8000';
+URL = '127.0.0.1:8000';
 
 // Component for handling project tiles
 function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
@@ -81,19 +81,20 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
                 return <p>{slide.slideInformation}</p>;
             case 'images':
                 temp_url = URL + slide.slideInformation;
-                return <img src={temp_url} alt={slide.slideDescription} className="slide-image" />;
+                return <img src={temp_url} alt={slide.slideDescription} className="slide-image" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />;
             case 'video':
                 temp_url = URL + temp_url;
-                return <video controls src={temp_url} className="slide-video">Your browser does not support the video tag.</video>;
+                return <video controls src={temp_url} className="slide-video" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}>Your browser does not support the video tag.</video>;
             case 'pdfs':
                 temp_url = URL + temp_url;
-                return <object data={temp_url} type="application/pdf" className="slide-pdf">
+                return <object data={temp_url} type="application/pdf" className="slide-pdf" style={{ maxWidth: '100%', maxHeight: '100%' }}>
                     <p>PDF cannot be displayed. You can download it <a href={temp_url}>here</a>.</p>
                 </object>;
             case 'embeddedLink':
-                return <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link"></iframe>;
+                return <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link" style={{ maxWidth: '100%', maxHeight: '100%' }}></iframe>;
             default:
                 return <p>Unsupported slide type</p>;
+
         }
     };
 
