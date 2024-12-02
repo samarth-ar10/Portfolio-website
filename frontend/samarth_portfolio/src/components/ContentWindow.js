@@ -110,7 +110,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
     return (
         <div className="project-tile-wrapper" ref={tileRef}>
             <div className="tile" id={project.id}>
-                <button className="slide-nav-button left" onClick={(e) => { e.stopPropagation(); handlePreviousSlide(); }} disabled={currentSlideIndex === 0}>��</button>
+                <button className="slide-nav-button left" onClick={(e) => { e.stopPropagation(); handlePreviousSlide(); }} disabled={currentSlideIndex === 0}>←</button>
                 <div className="tile-content">
                     <h1>{project.slides[currentSlideIndex].slideName}</h1>
                     <div className="slide-content">
