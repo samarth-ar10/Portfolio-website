@@ -91,7 +91,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
                     <p>PDF cannot be displayed. You can download it <a href={temp_url}>here</a>.</p>
                 </object>;
             case 'embeddedLink':
-                temp_url = URL + slide.slideInformation;
+                temp_url = slide.slideInformation;
                 return <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link media-content"></iframe>;
             default:
                 return <p>Unsupported slide type</p>;
