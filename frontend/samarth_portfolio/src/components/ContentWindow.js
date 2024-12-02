@@ -92,8 +92,11 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
                 </object>;
             case 'embeddedLink':
                 temp_url = slide.slideInformation;
-                console.log('Iframe URL:', temp_url); // Log the URL to the console
-                return <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link media-content" width="640" height="480"></iframe>;
+                return (
+                    <a href={temp_url} target="_blank" rel="noopener noreferrer">
+                        <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link media-content non-interactive-iframe"></iframe>
+                    </a>
+                );
             default:
                 return <p>Unsupported slide type</p>;
         }
@@ -102,7 +105,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
     return (
         <div className="project-tile-wrapper" ref={tileRef}>
             <div className="tile" id={project.id}>
-                <button className="slide-nav-button left" onClick={(e) => { e.stopPropagation(); handlePreviousSlide(); }} disabled={currentSlideIndex === 0}>←</button>
+                <button className="slide-nav-button left" onClick={(e) => { e.stopPropagation(); handlePreviousSlide(); }} disabled={currentSlideIndex === 0}>��</button>
                 <div className="tile-content">
                     <h1>{project.slides[currentSlideIndex].slideName}</h1>
                     <div className="slide-content">
