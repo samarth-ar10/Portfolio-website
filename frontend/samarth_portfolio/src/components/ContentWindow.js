@@ -125,7 +125,7 @@ function ContentWindow() {
 
     const logEventToServer = async (eventType, data) => {
         try {
-            const response = await fetch('http://192.168.68.65:8000/api/frontend_log', {
+            const response = await fetch(URL + '/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ function ContentWindow() {
 
     useEffect(() => {
         // Fetch presentation data from the Flask backend
-        fetch('http://192.168.68.65:8000/api/presentations')
+        fetch(URL + '/api/presentations')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
