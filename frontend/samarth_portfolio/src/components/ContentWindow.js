@@ -93,7 +93,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
             case 'embeddedLink':
                 temp_url = slide.slideInformation;
                 console.log('Iframe URL:', temp_url); // Log the URL to the console
-                return <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link media-content"></iframe>;
+                return <iframe src={temp_url} title={slide.slideName} className="slide-embedded-link media-content" width="640" height="480"></iframe>;
             default:
                 return <p>Unsupported slide type</p>;
         }
