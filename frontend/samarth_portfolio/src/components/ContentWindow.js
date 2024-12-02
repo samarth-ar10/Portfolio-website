@@ -87,13 +87,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
                 return <video controls src={temp_url} className="slide-video media-content">Your browser does not support the video tag.</video>;
             case 'pdfs':
                 temp_url = URL + slide.slideInformation;
-                return (
-                    <iframe
-                        src={`https://docs.google.com/gview?url=${temp_url}&embedded=true`}
-                        style={{ width: '100%', height: '100%' }}
-                        frameBorder="0"
-                    ></iframe>
-                );
+                return <embed src={temp_url} type="application/pdf" className="slide-pdf media-content" />;
             case 'embeddedLink':
                 temp_url = slide.slideInformation;
                 // console.log('Iframe URL:', temp_url); // Log the URL to the console
