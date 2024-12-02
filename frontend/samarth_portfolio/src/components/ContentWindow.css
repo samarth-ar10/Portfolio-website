@@ -152,6 +152,29 @@
     cursor: pointer;
 }
 
+.pdf-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: contain;
+}
+
+.pdf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .project-tile-wrapper {

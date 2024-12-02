@@ -87,7 +87,12 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
                 return <video controls src={temp_url} className="slide-video media-content">Your browser does not support the video tag.</video>;
             case 'pdfs':
                 temp_url = URL + slide.slideInformation;
-                return <embed src={temp_url} type="application/pdf" className="slide-pdf media-content" />;
+                return (
+                    <div className="pdf-container">
+                        <embed src={temp_url} type="application/pdf" className="slide-pdf media-content" />
+                        <div className="pdf-overlay" onClick={() => window.open(temp_url, '_blank')}></div>
+                    </div>
+                );
             case 'embeddedLink':
                 temp_url = slide.slideInformation;
                 // console.log('Iframe URL:', temp_url); // Log the URL to the console
