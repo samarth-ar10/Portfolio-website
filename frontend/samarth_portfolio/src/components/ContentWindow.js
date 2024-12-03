@@ -3,7 +3,7 @@ import './ContentWindow.css';
 import AiTile from './AiTile';
 import config from './config';
 
-const URL = 'http://192.168.68.65:8000';
+const URL = 'http://34.179.127.114:8000';
 
 // Component for handling project tiles
 function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
