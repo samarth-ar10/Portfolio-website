@@ -78,7 +78,7 @@ function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
         let temp_url = slide.slideInformation;
         switch (slide.slideType) {
             case 'text':
-                return <p>{slide.slideInformation}</p>;
+                return <p dangerouslySetInnerHTML={{ __html: slide.slideInformation }} />;
             case 'images':
                 temp_url = URL + slide.slideInformation;
                 return <img src={temp_url} alt={slide.slideDescription} className="slide-image media-content" />;
