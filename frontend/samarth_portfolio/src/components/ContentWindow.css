@@ -6,8 +6,7 @@
     flex-direction: column;
     padding: 20px;
     overflow-y: auto;
-    /* height: calc(100vh - 2000px); */
-    height: 79vh;
+    height: calc(100vh - 2000px);
     max-width: 480px;
     margin: 0 auto;
     /* Height between the status bar and the fixed message bar */
