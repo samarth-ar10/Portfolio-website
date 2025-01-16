@@ -55,7 +55,7 @@ class EventLogger {
     // Method to send event to server for logging in a database
     async sendEventToServer(event) {
       try {
-        const response = await fetch('samarth-ar10.com:8000/api/logEvent', {
+        const response = await fetch('http://samarth-ar10.com:8000/api/logEvent', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

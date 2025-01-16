@@ -7,7 +7,7 @@ function MessageBar() {
 
     const logMessageToServer = async (message) => {
         try {
-            const response = await fetch('samarth-ar10.com:8000/api/frontend_log', {
+            const response = await fetch('http://samarth-ar10.com:8000/api/frontend_log', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
