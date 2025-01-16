@@ -3,7 +3,7 @@ import './ContentWindow.css';
 import AiTile from './AiTile';
 import config from './config';
 
-const URL = 'http://samarth-ar10.com:8000';
+const URL = 'https://samarth-ar10.com:8000';
 
 // Component for handling project tiles
 function ProjectTile({ project, currentSlideIndex, setCurrentSlideIndex }) {
